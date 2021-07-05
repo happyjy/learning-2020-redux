@@ -1,3 +1,13 @@
-1. action, action creator
-2. reducer
-3. createStore
+1. action, actions creators 설정 (commit: 1c26a50526927befe7c77e1a0d1423c21c2c62a3)
+2. reducer 설정(commit: f803f31de7852bf5ea745fff09294f8216c2881c)
+3. createStore(commit: 30808edc76f294f690ea9c9ccbec740727ac6f09)
+   1. createStore 설정/ store객체의 getState, subscribe, unsubscribe 함수에 대해서 createStore.js 분석
+4. complete_todo action 추가(commit: 60a909674757289e14bbf348f1ed8789d64e88e4)
+5. reducer에 complete_todo, show_all, show_complete 로직 추가
+   1. reducer에 todo 관련 로직, show all/complete를 추가 하다 보니 복잡해졌다.
+   2. 분리가 필요해 보인다.
+   3. redux는 단일 스토어라 나누지 못한다.
+      1. 그래서 reducer를 나눌 고민을 시작.
+   4. 현재 state는 dictionary 개체에 todo, filter 두개의 프로퍼티를 가지고 있다.
+      1. 그래서 관심사(프로퍼티)별로 별개의 reducer를 작성하고 합치는 것을 생가해낸다.
+   5. 이것이 바로 `combineReducer` 입니다.

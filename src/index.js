@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
-import { addTodo } from './redux/actions';
+import { addTodo, complete_todo } from './redux/actions';
 
 // dispatch수행 되면 "subscribe"함수 수행
 store.subscribe(() => {
@@ -14,8 +14,10 @@ store.subscribe(() => {
 console.log(store);
 store.dispatch(addTodo('coding'));
 store.dispatch(addTodo('read book'));
-store.dispatch(addTodo('run nearby '));
+store.dispatch(addTodo('run'));
 
+store.dispatch(addTodo('할일'));
+store.dispatch(complete_todo(2));
 /* 
   # store Object 5개 function 반환
     * dispatch: ƒ dispatch(action)

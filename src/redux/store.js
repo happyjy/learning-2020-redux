@@ -1,6 +1,6 @@
-const { createStore } = require('redux');
-const { todoApp } = require('./reducers');
+import { createStore } from 'redux';
+import reducer from './reducers/reducer';
 
-const store = createStore(todoApp);
+const store = createStore(reducer);
 
 export default store;

@@ -10,4 +10,19 @@
       1. 그래서 reducer를 나눌 고민을 시작.
    4. 현재 state는 dictionary 개체에 todo, filter 두개의 프로퍼티를 가지고 있다.
       1. 그래서 관심사(프로퍼티)별로 별개의 reducer를 작성하고 합치는 것을 생가해낸다.
-   5. 이것이 바로 `combineReducer` 입니다.
+   5. 이것이 바로 `combineReducer`(redux 객체) 입니다.
+6. combineReducer 추가 작업
+   1. 파일 구조
+
+   ```js
+      src
+      ┣ redux
+      ┃ ┣ reducers
+      ┃ ┃ ┣ reducer.js    : 1. combineReducers를 통해서 reducer 합친다.
+      ┃ ┃ ┣ filter.js     : 1.1 reducer 함수
+      ┃ ┃ ┗ todos.js      : 1.1 reducer 함수
+      ┃ ┣ actions.js      : 3.1 actions
+      ┃ ┗ store.js        : 2. createStore 함수에 reducer인자로 초기화
+      ┣ App.js
+      ┣ index.js          : 3. store.js에서 생성한 store 사용/ store객체 함수 dispatch로 redux store state update
+   ```

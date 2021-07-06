@@ -26,3 +26,6 @@
       ┣ App.js
       ┣ index.js          : 3. store.js에서 생성한 store 사용/ store객체 함수 dispatch로 redux store state update
    ```
+
+7. Redux 를 React 에 연결 (1) - react-redux 안쓰고 연결하기
+8. Redux 를 React 에 연결 (2) - react-redux 쓰고 연결하기

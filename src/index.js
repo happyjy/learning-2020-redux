@@ -5,7 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './redux/store';
 // import { addTodo, complete_todo, showAll, showComplete } from './redux/actions';
-import ReduxContext from './contexts/ReduxContext';
+// import ReduxContext from './contexts/ReduxContext';
+import { Provider } from 'react-redux';
 
 // dispatch수행 되면 "subscribe"함수 수행
 /* 
@@ -66,9 +67,11 @@ import ReduxContext from './contexts/ReduxContext';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReduxContext.Provider value={store}>
+    {/* <ReduxContext.Provider value={store}> */}
+    <Provider store={store}>
       <App />
-    </ReduxContext.Provider>
+    </Provider>
+    {/* </ReduxContext.Provider> */}
   </React.StrictMode>,
   document.getElementById('root'),
 );

@@ -8,6 +8,7 @@ export default function todos(previousState = initializeState, action) {
   //   return [];
   // }
 
+  // console.log('# todos reducer > previousState: ', previousState);
   if (action.type === ADD_TODO) {
     // action 객체의 property를 보고 action뒤에 어떤 프로퍼티를 접근할지 결정한다.
     return [

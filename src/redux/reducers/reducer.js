@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux';
 import todos from './todos';
 import filter from './filter';
+import { TESTACTION } from '../actions';
 
 // state
 // ['코딩', '러닝']
@@ -15,6 +16,7 @@ import filter from './filter';
   }
  */
 
+/* combineREducers에 추가한 object property명으로  */
 const reducer = combineReducers({
   todos,
   filter,

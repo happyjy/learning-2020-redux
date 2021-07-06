@@ -1,3 +1,4 @@
+// # todos reducer action, action creator
 export const ADD_TODO = 'ADD_TODO';
 export const COMPLETE_TODO = 'COMPLETE_TODO';
 
@@ -17,6 +18,7 @@ export function complete_todo(index) {
   };
 }
 
+// # filter reducer action, action creator
 export const SHOW_ALL = 'SHOW_ALL';
 export const SHOW_COMPLETE = 'SHOW_COMPLETE';
 

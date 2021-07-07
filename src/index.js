@@ -27,12 +27,12 @@ import { Provider } from 'react-redux';
  */
 
 /* 
-  # store Object 5개 function 반환
+  # store Object 4개 function 반환
     * dispatch: ƒ dispatch(action)
     * getState: ƒ getState()
     * replaceReducer: ƒ replaceReducer(nextReducer)
     * subscribe: ƒ subscribe(listener)
-    * Symbol(observable): ƒ observable()
+    * Symbol(observable): ƒ observable() <- function
 */
 
 /* 

@@ -3,10 +3,12 @@ import { useRef } from 'react';
 export default function TodoForm({ addTodo }) {
   const inputRef = useRef();
 
-  const click = () => {
+  const click = function (e) {
     addTodo(inputRef.current.value);
     inputRef.current.value = '';
     inputRef.current.focus();
+    // e.preventDefault();
+    e.stopPropagation(); //  <------ Here is the magic
   };
 
   return (

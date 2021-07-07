@@ -41,13 +41,27 @@ export function getUsersFail(error) {
   };
 }
 
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log(4);
+      resolve();
+    }, ms);
+  });
+}
 // # 방법2. [액션생성함수]비동기 처리 with redux-thunk middleware
 export function getUsersThunk() {
-  return async (dispatch) => {
+  return async (dispatch, getState, { history }) => {
     try {
       dispatch(getUsersStart());
+      // sleep
+      console.log(1);
+      await sleep(2000);
+      console.log(2);
       const res = await axios.get('https://api.github.com/users');
+      console.log(3);
       dispatch(getUsersSuccess(res.data));
+      history.push('/');
     } catch (e) {
       dispatch(getUsersFail());
     }

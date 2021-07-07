@@ -3,6 +3,7 @@ import reducer from './modules/reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
+import history from '../history';
 
 function middleware1(store) {
   return (next) => {
@@ -35,10 +36,19 @@ const myLogger = (store) => (next) => (action) => {
   return result; // 여기서 바환하는 값은 dispatch(action)의 결과물
 };
 
+// * thunk.withExtraArgument({ history })
+//  * thunk extra Arguments 설정
+//  * action Creator에서 확인
 const store = createStore(
   reducer,
   composeWithDevTools(
-    applyMiddleware(middleware1, middleware2, myLogger, thunk, promise),
+    applyMiddleware(
+      middleware1,
+      middleware2,
+      myLogger,
+      thunk.withExtraArgument({ history }),
+      promise,
+    ),
   ),
 );
 

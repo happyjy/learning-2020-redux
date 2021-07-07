@@ -1,6 +1,7 @@
 import { applyMiddleware, createStore } from 'redux';
 import reducer from './reducers/reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
 
 function middleware1(store) {
   return (next) => {
@@ -35,7 +36,9 @@ const myLogger = (store) => (next) => (action) => {
 
 const store = createStore(
   reducer,
-  composeWithDevTools(applyMiddleware(middleware1, middleware2, myLogger)),
+  composeWithDevTools(
+    applyMiddleware(middleware1, middleware2, myLogger, thunk),
+  ),
 );
 
 export default store;

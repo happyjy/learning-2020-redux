@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 // # todos reducer action, action creator
 export const ADD_TODO = 'ADD_TODO';
 export const COMPLETE_TODO = 'COMPLETE_TODO';
@@ -53,5 +55,19 @@ export function getUsersFail(error) {
   return {
     type: GET_USERS_FAIL,
     error,
+  };
+}
+
+// 비동기 처리 with thunk
+export function getUsersThunk() {
+  return async (dispatch) => {
+    debugger;
+    try {
+      dispatch(getUsersStart());
+      const res = await axios.get('https://api.github.com/users');
+      dispatch(getUsersSuccess(res.data));
+    } catch (e) {
+      dispatch(getUsersFail());
+    }
   };
 }

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import todos from './todos';
 import filter from './filter';
-import { TESTACTION } from '../actions';
+import users from './users';
 
 // state
 // ['코딩', '러닝']
@@ -20,6 +20,7 @@ import { TESTACTION } from '../actions';
 const reducer = combineReducers({
   todos,
   filter,
+  users,
   /* 이곳에 recuder를 추가 */
 });
 export default reducer;

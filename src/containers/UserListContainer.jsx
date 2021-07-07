@@ -14,7 +14,6 @@ export default function UserListContainer() {
     try {
       dispatch(getUsersStart());
       const res = await axios.get('https://api.github.com/users');
-      console.log(res);
       dispatch(getUsersSuccess(res.data));
     } catch (e) {
       dispatch(getUsersFail());

@@ -2,6 +2,7 @@ import { applyMiddleware, createStore } from 'redux';
 import reducer from './reducers/reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import promise from 'redux-promise-middleware';
 
 function middleware1(store) {
   return (next) => {
@@ -37,7 +38,7 @@ const myLogger = (store) => (next) => (action) => {
 const store = createStore(
   reducer,
   composeWithDevTools(
-    applyMiddleware(middleware1, middleware2, myLogger, thunk),
+    applyMiddleware(middleware1, middleware2, myLogger, thunk, promise),
   ),
 );
 

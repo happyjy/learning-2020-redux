@@ -1,8 +1,30 @@
-import { ADD_TODO, COMPLETE_TODO } from '../actions';
+// # todos reducer action, action creator
 
+// 액션 타입 정의
+export const ADD_TODO = 'learning-2021-redux/todos/ADD_TODO';
+export const COMPLETE_TODO = 'learning-2021-redux/todos/COMPLETE_TODO';
+
+// 액션 생성 함수
+// {type: ADD_TODO, text: '할일'}
+export function addTodo(text) {
+  return {
+    type: ADD_TODO,
+    text,
+  };
+}
+// {type: COMPLETE_TODO, index: 3}
+export function complete_todo(index) {
+  return {
+    type: COMPLETE_TODO,
+    index,
+  };
+}
+
+// 초기값
 const initializeState = [];
 
-export default function todos(previousState = initializeState, action) {
+// 리듀서
+export default function reducer(previousState = initializeState, action) {
   // 초기값을 설정해주는 부분
   // if (previousState === undefined) {
   //   return [];

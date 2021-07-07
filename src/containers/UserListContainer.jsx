@@ -8,7 +8,7 @@ import {
   getUsersStart,
   getUsersSuccess,
   getUsersThunk,
-} from '../redux/actions';
+} from '../redux/modules/users';
 
 export default function UserListContainer() {
   const users = useSelector((state) => state.users.data);

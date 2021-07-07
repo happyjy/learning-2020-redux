@@ -1,21 +1,10 @@
-import axios from 'axios';
 import { useEffect } from 'react';
 
-export default function UserList({ users, start, success, fail }) {
-  // start, success, fail: dispatch 호출 함수
+export default function UserList({ users, getUsers }) {
+  // useEffect의 decendency list로 정한 것들은 레퍼런스가 바뀌지 않게 useCallback 을 사용해서 생성한다.
   useEffect(() => {
-    async function getUsers() {
-      try {
-        start();
-        const res = await axios.get('https://api.github.com/users');
-        success(res.data);
-      } catch (e) {
-        fail(e);
-      }
-    }
     getUsers();
-    // useEffect의 decendency list로 정한 것들은 레퍼런스가 바뀌지 않게 useCallback 을 사용해서 생성한다.
-  }, [start, success, fail]);
+  }, [getUsers]);
 
   if (users.length === 0) {
     return <p>현재 유저 정보 없음</p>;

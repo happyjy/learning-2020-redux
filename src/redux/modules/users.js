@@ -55,11 +55,8 @@ export function getUsersThunk() {
     try {
       dispatch(getUsersStart());
       // sleep
-      console.log(1);
       await sleep(2000);
-      console.log(2);
       const res = await axios.get('https://api.github.com/users');
-      console.log(3);
       dispatch(getUsersSuccess(res.data));
       history.push('/');
     } catch (e) {

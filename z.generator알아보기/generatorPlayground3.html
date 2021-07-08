@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="">
+</head>
+
+<body>
+  <!-- <script src="" async defer> -->
+  <!-- 
+      * redux-saga는 액션을 모니터링 할 수 있다고 소개했었는데요
+        * Generator를 통해 모니터링이 어떻게 이루어지는지 예시 코드를 작성해보면서 배워보자
+      
+      * redux-saga에서는 이러한 원리로 액션을 모니터링하고, 
+        * 특정 액션이 발생했을때 우리가 원하는 자바스크립트 코드를 실행시켜준답니다.
+    -->
+  <script>
+    function* watchGenerator() {
+      console.log('모니터링 시작!');
+      while (true) {
+        const action = yield;
+        if (action.type === 'HELLO') {
+          console.log('안녕하세요?');
+        }
+        if (action.type === 'BYE') {
+          console.log('안녕히가세요.');
+        }
+      }
+    }
+
+    const watch = watchGenerator();
+    watch.next();                    // 모니터링 시작!
+    watch.next({ type: 'HELLO' })    // 안녕하세요?
+    watch.next({ type: 'BYE' })      // 안녕히가세요.
+
+
+  </script>
+</body>
+
+</html>

@@ -188,7 +188,7 @@ function* getUsersSaga(action) {
 /*
  *
  * * saga 함수를 saga 미들웨어에 등록 단계
- * * users.js안에서 생성된 saga함수를 한군데 모아서 sgaa 미들웨어에 등록
+ * * users.js안에서 생성된 saga함수를 한군데 모아서 saga 미들웨어에 등록
  * *
  */
 export function* usersSaga() {

@@ -60,7 +60,7 @@ export function getUsersFail(error) {
 
 // 비동기 처리 with thunk
 export function getUsersThunk() {
-  return async (dispatch) => {
+  return async (dispatch, getState) => {
     debugger;
     try {
       dispatch(getUsersStart());

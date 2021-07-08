@@ -1,71 +1,24 @@
-# Getting Started with Create React App
+## redux-saga란?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- 액션을 모니터링 → 특정 액션이 발생하면 이에 따라 특정 작업을 하는 방식으로 사용
+  - 여기서 특정 작업이란,
+    - 특정 자바스크립트를 실행
+    - 다른 액션을 디스패치
+    - 현재 상태를 불러오는 것
+- 미들웨어 입니다.
+- 제너레이터 객체를 만들어 내는 제네레이터 생성 함수를 이용합니다.
+- 리덕스 사가 미들웨어를 설정하고,
+  - 내가 만든 사가 함수를 등록한 후
+  - 사가 미들웨어를 실행합니다.
+  - 그리고 등록된 사가 함수를 실행할 액션을 디스패치하면 됩니다.
+- redux-saga는 다양한 상황에 쓸 수 있는 만큼 제공되는 기능도 많고 사용방법도 진입장벽이 꽤나 큽니다.
+  - 자바스크립트 초심자라면 생소할만한 Generator 문법을 사용
+  - 이 문법을 이해하지 못하면 redux-saga를 배우는 것이 매우 어렵다
 
-## Available Scripts
+## redux-saga는 redux-thunk로 못하는 다양한 작업들을 처리하는 예시 5가지
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# learning-2021-redux
+1. 비동기 작업을 할 때 기존 요청을 취소 처리 할 수 있습니다
+2. 특정 액션이 발생했을 때 이에 따라 다른 액션이 디스패치되게끔 하거나, 자바스크립트 코드를 실행 할 수 있습니다.
+3. 웹소켓을 사용하는 경우 Channel 이라는 기능을 사용하여 더욱 효율적으로 코드를 관리 할 수 있습니다 [(참고)](https://medium.com/@pierremaoui/using-websockets-with-redux-sagas-a2bf26467cab)
+4. API 요청이 실패했을 때 재요청하는 작업을 할 수 있습니다.
+5. 이 외에도 다양한 까다로운 비동기 작업들을 redux-saga를 사용하여 처리 할 수 있답니다.

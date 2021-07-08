@@ -1,71 +1,52 @@
-# Getting Started with Create React App
+아래 branch list와 프로젝트 root 정보가 있는데 브런치 순번대로 설명을 작성한 .md파 일이 있다.  
+번호별로 간략 설명도 아래 적어 놓았다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 번호별 간략 설명
 
-## Available Scripts
+## 번호1
 
-In the project directory, you can run:
+* todoslist의 filter, todos를 구현(번호2,3에서도 이 모듈로 진행)
 
-### `yarn start`
+## 번호2
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* store객체에서 dispatch, getState로 redux, react 연결
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 번호3
 
-### `yarn test`
+* react-redux사용
+* 방법1: hoc(connect 객체)에 mapStateToProps, mapDispatchToProps callback function 설정으로 구현
+* 방법2: hook으로 dispatch, state select하는 방법으로 구현
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 번호4 비동기처리 진행/ 팁
 
-### `yarn build`
+* github user list 가지고 오는 모듈 구현 으로 실습("usersList 모듈")
+* 비동기처리방법1: Async Action with redux
+* 비동기처리방법2: redux-thunk 활용
+* 비동기처리방법3: promise-middleware
+* 팁1: redux middleware
+* 팁2: redux devtools 연결
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 번호5 비동기 처리/ 팁
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* 비동기처리방버: redux-saga
+* 팁1: Ducks Pattern
+* 팁2: react-router-dom을 redux에 연결하기
+* 팁3: redux-actions
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# branch list
 
-### `yarn eject`
+1. redux작업(action,reducers,createStore,combineReducers)
+2. redux_with_react(react-redux사용X)
+3. redux_with_react(react-redx사용O)
+4. redux에서_비동기처리방법_3가지
+5. Redux_Advance(2)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# file list
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+프로젝트 root에 위치
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# learning-2021-redux
+1. 작업내용 - redux 설정.md
+2. 작업내용 - redux, react 연결(react-redux사용x).md
+3. 작업내용 - redux, react 연결(react-redux사용).md
+4. 작업내용 - redux 비동기 처리.md
+5. 작업내용 - redux advance.md

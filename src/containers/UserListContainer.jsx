@@ -5,6 +5,7 @@ import UserList from '../components/UserList';
 import {
   getUsersFail,
   getUsersPromise,
+  getUsersSagaStart,
   getUsersStart,
   getUsersSuccess,
   getUsersThunk,
@@ -30,8 +31,9 @@ export default function UserListContainer() {
     // getUsersThunk action creator의 return 값
     //  * function(네트워크 호출 비동기처리해야 할)
 
-    dispatch(getUsersThunk()); // redux-thunk 방법
+    // dispatch(getUsersThunk()); // redux-thunk 방법
     // dispatch(getUsersPromise()); // redux-promise 방법
+    dispatch(getUsersSagaStart()); // redux-saga 방법
   }, [dispatch]);
 
   return <UserList users={users} getUsers={getUsers} />;

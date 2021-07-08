@@ -5,6 +5,8 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import history from '../history';
 import { routerMiddleware } from 'connected-react-router';
+import createSagaMiddleware from '@redux-saga/core';
+import rootSaga from './modules/rootSaga';
 
 function middleware1(store) {
   return (next) => {
@@ -40,6 +42,8 @@ const myLogger = (store) => (next) => (action) => {
 // * thunk.withExtraArgument({ history })
 //  * thunk extra Arguments 설정
 //  * action Creator에서 확인
+
+const sagaMiddleware = createSagaMiddleware();
 const store = createStore(
   reducer,
   composeWithDevTools(
@@ -50,8 +54,11 @@ const store = createStore(
       thunk.withExtraArgument({ history }),
       promise,
       routerMiddleware(history),
+      sagaMiddleware,
     ),
   ),
 );
+
+sagaMiddleware.run(rootSaga);
 
 export default store;

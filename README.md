@@ -33,6 +33,11 @@
 * 팁2: react-router-dom을 redux에 연결하기
 * 팁3: redux-actions
 
+## 번호 6,7,8,9
+
+* redux에서 비동기 처리할 수있는 네 가지 방법
+* 해당 브랜치에서 프로젝트를 수행시켜 확인할 수 있다.
+
 # branch list
 
 1. redux작업(action,reducers,createStore,combineReducers)
@@ -40,6 +45,10 @@
 3. redux_with_react(react-redx사용O)
 4. redux에서_비동기처리방법_3가지
 5. Redux_Advance(2)
+6. 6.1비동기(Action)
+7. 6.2비동기(redux-thunk)
+8. 6.3비동기(redux-promise)
+9. 6.4비동기(redux-saga)
 
 # file list
 

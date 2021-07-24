@@ -25,7 +25,7 @@ export const GET_USERS_FULFILLED =
 export const GET_USERS_REJECTED =
   'learning-2021-redux/filter/GET_USERS_REJECTED';
 
-// # 방법1, 방법2 [액션생성함수]
+// # [액션생성함수] 방법1(미들웨어사용x), 방법2(redux-thunk), 방법4(redux-saga)
 export function getUsersStart() {
   return {
     type: GET_USERS_START,
@@ -52,6 +52,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   // redux-thunk reducer 처리
+  // redux-saga reducer 처리
   if (action.type === GET_USERS_START) {
     return {
       ...state,

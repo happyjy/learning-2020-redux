@@ -11,7 +11,7 @@
 
 1. redux작업(action,reducers,createStore,combineReducers)
 2. redux_with_react(react-redux사용X)
-3. redux_with_react(react-redx사용O)
+3. redux_with_react(react-redux사용O)
 4. redux에서_비동기처리방법_3가지
 5. Redux_Advance(2)
 6. 6.1비동기(Action)

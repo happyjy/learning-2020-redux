@@ -26,3 +26,8 @@
       ┣ App.js
       ┣ index.js          : 3. store.js에서 생성한 store 사용/ store객체 함수 dispatch로 redux store state update
    ```
+
+* 브런치 1.redux작업(action,reducers,createStore,combineReducers)테스트 방법
+    * view 작업은 없으며
+    * index.js에서
+    * react-redux의 createStore의 return value subscribe, dispatch를 활용해서 확인하고 있다.

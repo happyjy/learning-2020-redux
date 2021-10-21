@@ -1,11 +1,11 @@
-아래 branch list와 프로젝트 root 정보가 있는데 브런치 순번대로 설명을 작성한 .md파 일이 있다.  
+아래 branch list와 프로젝트 root 정보가 있는데 브런치 순번대로 설명을 작성한 .md파 일이 있다.
 번호별로 간략 설명도 아래 적어 놓았다.
 
 # main 브렌치
 
 * 모든 작업 내용이 있다.
 * 깃허브 유저 리스트 받는 비동기 관련 테스트시 _src/containers/UserListContainer.jsx에서_ dispatch 하는 부분을 변경해서 테스트 할 수 있다.
-  * 이 파일에 라이브러리를 사용하지않고 action으로만 비동기 처리 로직도 있다.
+    * 이 파일에 라이브러리를 사용하지않고 action으로만 비동기 처리 로직도 있다.
 
 # branch list
 
@@ -34,10 +34,10 @@
 * _react-redux사용_
 * 아래 방법 1,2는 모두 container 역할하는 component에서 이뤄진다.
 * 방법1
-  * hoc(connect 객체)에 mapStateToProps, mapDispatchToProps callback function 설정으로 구현
+    * hoc(connect 객체)에 mapStateToProps, mapDispatchToProps callback function 설정으로 구현
 * 방법2
-  * hook으로 dispatch, state select하는 방법으로 구현
-  * 이 방법이 훨씬 깔끔하다.
+    * hook으로 dispatch, state select하는 방법으로 구현
+    * 이 방법이 훨씬 깔끔하다.
 
 ## 번호4 비동기처리 진행/ 팁
 
@@ -69,3 +69,18 @@
 3. 작업내용 - redux, react 연결(react-redux사용).md
 4. 작업내용 - redux 비동기 처리.md
 5. 작업내용 - redux advance.md
+
+# git command
+
+* 브런치 확인
+    * git branch
+* 브런치 이동
+    * git checkout BRANCH NAME
+* 현재 브랜치를 BRANCH NAME으로 브랜치 생성 후 만든 브랜치로 변경
+    * git checkout -b BRANCH NAME
+* 브랜치 제거
+    * git branch -d BRANCH NAME
+* 강제로 브랜치를 제거
+    * git branch -m NEW BRANCH NAME
+* branch rename
+    * git branch -m OLD-BRANCH-NAME NAME
